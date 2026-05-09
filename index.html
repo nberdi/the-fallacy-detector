@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Fallacy Detector</title>
+    <link rel="icon" type="image/png" href="detector.png" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="hero" id="top">
+      <div class="container hero-inner">
+        <p class="badge">🧠 Argumentation & Debate</p>
+        <h1>The Fallacy Detector</h1>
+        <p class="subtitle">
+          Can you spot weak arguments before they persuade you?
+        </p>
+        <p class="note">
+          A small interactive project inspired by Argumentation and Debate.
+        </p>
+        <a class="btn btn-primary" href="#quiz" id="startBtn"
+          >Start Detecting</a
+        >
+      </div>
+    </header>
+
+    <main>
+      <section class="quiz-section" id="quiz" aria-live="polite">
+        <div class="container">
+          <div class="section-head">
+            <h2>🔍 Fallacy Practice</h2>
+            <div class="status-wrap" role="status" aria-live="polite">
+              <p id="progressText">Question 1 of 12</p>
+              <p id="scoreText">Score: 0</p>
+            </div>
+          </div>
+
+          <article class="card quiz-card hidden" id="quizCard">
+            <h3>Argument</h3>
+            <p id="argumentText"></p>
+            <h4>What is the main issue in this argument?</h4>
+            <div
+              id="choices"
+              class="choices"
+              role="group"
+              aria-label="Answer choices"
+            ></div>
+
+            <div id="feedback" class="feedback hidden">
+              <p id="resultText" class="result"></p>
+              <p id="explanationText"></p>
+              <p id="improveText" class="improve"></p>
+
+              <div class="meter" aria-label="Argument strength meter">
+                <h4>⚖️ Argument Strength Meter</h4>
+                <div class="meter-row">
+                  <span>Evidence</span>
+                  <div class="bar-track">
+                    <div class="bar" id="bar-evidence"></div>
+                  </div>
+                  <span class="bar-value" id="val-evidence">0%</span>
+                </div>
+                <div class="meter-row">
+                  <span>Logic</span>
+                  <div class="bar-track">
+                    <div class="bar" id="bar-logic"></div>
+                  </div>
+                  <span class="bar-value" id="val-logic">0%</span>
+                </div>
+                <div class="meter-row">
+                  <span>Relevance</span>
+                  <div class="bar-track">
+                    <div class="bar" id="bar-relevance"></div>
+                  </div>
+                  <span class="bar-value" id="val-relevance">0%</span>
+                </div>
+                <div class="meter-row">
+                  <span>Fairness</span>
+                  <div class="bar-track">
+                    <div class="bar" id="bar-fairness"></div>
+                  </div>
+                  <span class="bar-value" id="val-fairness">0%</span>
+                </div>
+                <div class="meter-row">
+                  <span>Clarity</span>
+                  <div class="bar-track">
+                    <div class="bar" id="bar-clarity"></div>
+                  </div>
+                  <span class="bar-value" id="val-clarity">0%</span>
+                </div>
+              </div>
+            </div>
+
+            <button class="btn btn-secondary hidden" id="nextBtn">Next</button>
+          </article>
+
+          <article class="card hidden" id="reviewScreen">
+            <h3>📝 Final Review</h3>
+            <p id="finalScore" class="final-score"></p>
+            <p id="resultTitle" class="result-title"></p>
+            <p id="encouragement" class="encouragement"></p>
+            <div class="review-actions">
+              <button class="btn btn-primary" id="restartBtn">
+                Restart Quiz
+              </button>
+              <a class="btn btn-secondary" href="#fallacySummary"
+                >Review Fallacies</a
+              >
+            </div>
+
+            <div id="fallacySummary" class="summary-list"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="skills-section" id="skills">
+        <div class="container">
+          <h2>🎙️ Debate Skills Essentials</h2>
+          <div class="skill-grid" id="debateSkills"></div>
+        </div>
+      </section>
+
+      <section class="thank-you" id="thanks">
+        <div class="container card">
+          <h2>📣 Professor Thank-You</h2>
+          <p>
+            This project was created as a small thank-you for a class that
+            helped me think more carefully about arguments, evidence,
+            persuasion, and respectful debate. Thank you for teaching this
+            semester.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="container footer-inner">
+        <p>Created by Nauryzbek Berdi</p>
+        <p>Argumentation and Debate</p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
